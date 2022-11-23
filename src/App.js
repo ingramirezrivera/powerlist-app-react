@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { GiHornedHelm } from "react-icons/gi";
 import { AiOutlinePlus } from "react-icons/ai";
-import { CLOSING } from "ws";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -38,8 +37,31 @@ function App() {
     console.log(tasks);
   };
 
-  const date = new Date()
-  console.log(date)
+  const date = new Date();
+  console.log(date);
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   return (
     <div className="app">
@@ -49,19 +71,26 @@ function App() {
           Powerlist
         </h1>
 
-        <form onSubmit={handleSubmit}>
-          <AiOutlinePlus />
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter Task"
-            type="text"
-          />
-        </form>
+        <div className="date">
+          <p>{days[date.getDay()]}</p>
+          <p>{date.getDate()},</p>
+          <p>{months[date.getMonth()]}</p>
+        </div>
+        <div className="form-input">
+          <form onSubmit={handleSubmit}>
+            <AiOutlinePlus className="icon"/>
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Enter Task"
+              type="text"
+            />
+          </form>
+        </div>
 
         {tasks.map((task) => {
           return (
-            <div key={task.id}>
+            <div key={task.id} className="task-row">
               <p
                 onClick={() => {
                   toggleComplete(task.id);

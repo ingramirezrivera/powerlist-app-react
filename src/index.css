@@ -1,3 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .app {
+  margin: 100px auto;
+  max-width: 400px;
   text-align: center;
+  padding: 1rem;
+}
+
+.app .date {
+  display: flex;
+  margin-top: 15px;
+}
+
+.app .task-row {
+  display: flex;
+}
+
+.app .form-input {
+  position: relative;
+  width: 100%;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.app .form-input .icon {
+  
+  position: absolute;
+  right: 1px;
+  top: 0;
+  font-size: 25px;
+  color: #4b00ff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app form input {
+  border: 2px solid #eeee;
+  padding: 5px 10px 5px 50px;
+  font-size: 18px;
+  line-height: 30px;
+  outline: 0;
+  display: block;
+  width: 100%;
+  border-radius: 8;
 }
